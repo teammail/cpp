@@ -23,7 +23,7 @@
 
 Установка IDE Code::Blocks. Запуск программы. Отладка
 -----------------------------------------------------
-* Code::Blocks: http://www.codeblocks.org/downloads/binaries 
+* Code::Blocks: http://www.codeblocks.org/downloads/binaries - выбирайте версию вместе с MinGW (например: codeblocks-13.12mingw-setup.exe)
 
 Программа «Hello world!» на C и на C++. Отличия С и C++
 -------------------------------------------------------

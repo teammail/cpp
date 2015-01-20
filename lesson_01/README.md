@@ -27,9 +27,8 @@
 
 Программа «Hello world!» на C и на C++. Отличия С и C++
 -------------------------------------------------------
-
-[Hello world C++](/lesson_01/00_first/helloworld.cpp)
-[Hello world C](/lesson_01/00_first/helloworld.c)
+* [Hello world C++](/lesson_01/00_first/helloworld.cpp)
+* [Hello world C](/lesson_01/00_first/helloworld.c)
 
 Общая структура программы. Использование комментариев (практика: комментарии до кода). 
 

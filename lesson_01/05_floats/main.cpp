@@ -16,8 +16,8 @@ int main()
     double c = 1;
 
  // fabs - взять по модулю
- //   if(a + b == c) {
-    if( fabs((a + b) - c) < DBL_EPSILON * 1000) {
+   // if(a + b == c) {
+   if( fabs((a + b) - c) < DBL_EPSILON * 1000) {
       cout << a << " + " << b << " == " << c << endl;
     } else {
       cout << a << " + " << b << " != " << c << endl;

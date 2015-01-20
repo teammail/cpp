@@ -33,7 +33,7 @@ int main() {
     printf("%.2f %d\n", f, sizeof(f));
 
     double d = 1.2;
-    printf("%lf %d\n", d, sizeof(d));
+    printf("%.3lf %d\n", d, sizeof(d));
 
     char c = 'B';
     printf("%c\n", c);

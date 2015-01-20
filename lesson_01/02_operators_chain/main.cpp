@@ -26,7 +26,7 @@ int main()
     cout << "M = " << M << endl;
 
     a = 1;
-    b = ++++a;
+    b = ++++++a;
     cout << "a = " << a << endl;
     cout << "b = " << b << endl;
 

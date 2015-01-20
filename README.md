@@ -1,6 +1,11 @@
 C++ junior developer
 ====================
 
+* Степулёнок Денис Олегович
+* E-mail: StDen@mail.ru или super.denis@gmail.com
+* Телефон: +79117117850
+* Группа: http://vk.com/cpp_junior_developer
+
 Ссылки для скачивания
 ---------------------
 * Code::Blocks: http://www.codeblocks.org/downloads/binaries

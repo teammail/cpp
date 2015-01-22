@@ -1,27 +1,38 @@
 // Домашнее задание - рекурсия
+// ---------------------------
+//  ЗАДАНИЕ:
+// Пользователь вводит натуральное число N. Нужно вывести все способы разложить его на слагаемые. 
+// Способы отличающиеся только порядком слагаемых считаются одинаковыми.
+// -----------------------
+// Например N = 4:
+// 4 = 4
+// 4 = 3 + 1
+// 4 = 2 + 2
+// 4 = 2 + 1 + 1
+// 4 = 1 + 1 + 1 + 1
 #include <iostream>
-#include <math.h>
+#include <cmath>
 
 using namespace std;
 
-struct Point {
-  double x,y;
-};
-
-double sqr(double x){
-  return x*x;
+// N - число для разложения
+// m - максимальное слагаемое в сумме
+void sum(int N, int m){
+  // TODO: реализовать
 }
 
-double dist(Point a, Point b){
-  return
-    sqrt(sqr(a.x-b.x) +
-         sqr(a.y-b.y));
+void sum(int N){
+  sum(N, N);
 }
 
-int main()
-{
-    Point a = {1.2, 1.3},
-          b = {10.2, 3.3};
-    cout << dist(a,b) << endl;
-    return 0;
+int main() {
+  // Вводим число N
+  int N;
+  cout << "N = ";
+  cin >> N;
+
+  // Вывод разложения на слагаемые
+  sum(N);
+  
+  return 0;
 }

@@ -32,7 +32,12 @@ using namespace std;
 int main() {
   for(int i = 1; i <= 100; ++i){
     long long res = factorial(i);
-    cout << i << "! = " << res << endl;
+    //cout << i << "! = " << res << endl;
+    cout << i << "! = "
+      << factorial(i) << " "
+      << factorial2(i) << " "
+      << factorial3(i) << " "
+      << endl;
   }
   return 0;
 }

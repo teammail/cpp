@@ -18,6 +18,23 @@ double dist(Point a, Point b){
          sqr(a.y-b.y));
 }
 
+typedef Point Vector;
+
+// Сумма
+Point sum(Vector A, Vector B){
+  // TODO: Реализовать
+}
+
+// Разность
+Point sub(Vector A, Vector B){
+  // TODO: Реализовать
+}
+
+// Скалярное произведение векторов
+Point dotProduct(Vector A, Vector B){
+  // TODO: Реализовать
+}
+
 int main()
 {
     Point a = {1.2, 1.3},

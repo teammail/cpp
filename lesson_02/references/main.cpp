@@ -4,20 +4,37 @@
 using namespace std;
 
 void f1(int x){
+    cout << "x = " << x << endl;
     x++;
     cout << "x = " << x << endl;
 }
 
 void f2(int& x){
+    cout << "x = " << x << endl;
     x++;
     cout << "x = " << x << endl;
 }
 
 void f3(int* x){
+    cout << "x = " << *x << endl;
     (*x)++;
     cout << "x = " << *x << endl;
 }
 
+void example2(){
+    int a = 2;
+    cout << "a = " << a << endl;
+    f1(a);
+    cout << "a = " << a << endl;
+    a = 10;
+    cout << "a = " << a << endl;
+    f2(a);
+    cout << "a = " << a << endl;
+    a = 20;
+    cout << "a = " << a << endl;
+    f3(&a);
+    cout << "a = " << a << endl;
+}
 
 void example1(){
     int a = 2; // a - локальная переменная, в ней 2
@@ -38,15 +55,7 @@ void example1(){
     cout << *c << endl; // Теперь выведем значение d
 }
 
-void example2(){
-    int a = 2;
-    f1(a);
-    cout << "a = " << a << endl;
-    f2(a);
-    cout << "a = " << a << endl;
-    f3(&a);
-    cout << "a = " << a << endl;
-}
+
 
 void example3(){
   int *c; // c - указатель на целое число
@@ -64,8 +73,8 @@ void example3(){
 int main()
 {
     //example1();
-    //example2();
-    example3();
+    example2();
+    //example3();
 
     return 0;
 }

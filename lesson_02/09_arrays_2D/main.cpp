@@ -11,12 +11,14 @@ int main()
         { 7, 9, 10}
       };
 
+    // Поиск минимума
     int minValue = A[0][0];
     for(int i = 0; i < 3; ++i)
       for(int j = 0; j < 3; ++j)
         if(A[i][j] < minValue)
           minValue = A[i][j];
 
+    // Сумма всех элементов
     int sum = 0;
     for(int i = 0; i < 3; ++i)
       for(int j = 0; j < 3; ++j)

@@ -35,7 +35,5 @@ int main()
         if(intArray[i] > maxValue)
            maxValue = intArray[i];
 
-
-
     return 0;
 }

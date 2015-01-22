@@ -8,6 +8,13 @@ using namespace std;
 
 int main()
 {
+  int a = 0;
+  if(a =/*=*/ 0){
+    cout << "a = 0" << endl;
+  } else {
+    cout << "a != 0" << endl;
+  }
+
     if((3 >= 2) && (10 > 7)){
         cout << "TRUE" << endl;
     } else {
@@ -33,6 +40,6 @@ int main()
   } else {
     cout << "False!" << endl;
   }
-  cout << "j = " << j << endl;
+  cout << "j = " << j << endl; */
   return 0;
 }

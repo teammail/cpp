@@ -23,10 +23,17 @@ int main()
         break;
     case 1:
         cout << "point" << endl; // Точка
-        cout << "..." << endl;
         break;
-       //...
-       //cout << "segment"
+    case 2:
+        cout << "segment" << endl;
+        break;
+    case 3:
+        cout << "triangle" << endl;
+        break;
+    case 4:
+    case 5:
+        // Общая обработка для случаев N = 4,5
+        break;
     default:
         cout << ((N < 0) ? "error" : "N-edged polygon") << endl;
     }

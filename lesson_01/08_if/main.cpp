@@ -1,10 +1,17 @@
-// Условный оператор if 
+// Условный оператор if
 #include <iostream>
 
 using namespace std;
 
 int main() {
     setlocale(LC_ALL, "Russian");
+
+    for(int i = -3; i <= 3; ++i)
+      if(i){
+        cout << i << " - TRUE" << endl;
+      } else {
+        cout << i << " - FALSE" << endl;
+      }
 
     int a = 2, b = 3;
     // && - логическое И

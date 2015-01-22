@@ -2,14 +2,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 int min(int a, int b){
-    return 0;
+  if(a < b)
+    return a;
+  else
+    return b;
 }
 
-double min(double a, double b){
-    return 0;
+double fmin(double a, double b){
+  if(a < b)
+    return a;
+  else
+    return b;
 }
+
+// fabs, abs
 
 int main()
 {

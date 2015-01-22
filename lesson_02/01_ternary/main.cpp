@@ -1,3 +1,4 @@
+// Тернарный оператор слева от присваивания
 #include <iostream>
 
 using namespace std;

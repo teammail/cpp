@@ -1,3 +1,4 @@
+// Пример OpenGL приложения на C
 #include <windows.h>
 #include <gl/gl.h>
 

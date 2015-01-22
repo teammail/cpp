@@ -76,3 +76,5 @@
 * https://vk.com/cpp_junior_developer - группа ВКонтакте
 
 Пример: https://ideone.com/q9Vglz
+https://ideone.com
+

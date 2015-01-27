@@ -17,15 +17,25 @@ struct MyStruct {
 
 int main() {
     char* s;
+    s = malloc(100);
+    if(s == NULL){
+
+    }
+    if(!s){
+      // Память не отведена
+    }
     if(!(s = malloc(100))){ // 100 байт
         printf("No memory!\n");
         return 0;
     }
-    char c = malloc(10);
+    char* c = (char *) malloc(10);
     printf("Address - %d\n", (int)s);
     strcpy(s, "Test\n");
     printf("s = %s\n", s);
+
+    // Освобождаем динамическую память
     free(s);
+
     s = NULL;
 
     struct MyStruct m;
@@ -36,9 +46,9 @@ int main() {
 
     struct MyStruct* mp;
     mp = malloc(sizeof(struct MyStruct));
+    (*mp).d  = 1;
     mp->i = 22;
     mp->d = 1.2;
-
 
     // Два порядка байтов:
     // * Big-endian - старший байт в конце (IBM, майнфреймы, Sun Sparc и т.д.)

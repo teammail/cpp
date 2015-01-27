@@ -4,35 +4,9 @@
 #include <iostream>
 #include <math.h>
 
-using namespace std;
+#include "square.h"
 
-// Инкапсуляция
-class Square {
-//private:
-  double side;
-  double area;
-public:
-  // Получить сторону квадрата
-  double getSide(){
-    //return sqrt(area);
-    return side;
-  }
-  // Задать сторону квадрата
-  void setSide(double value){
-    area = value*value;
-    side = value;
-  }
-  // Получить площадь
-  double getArea(){
-    return area;
-    //return side*side;
-  }
-  // Задать площадь
-  void setArea(double value){
-    area = value;
-    side = sqrt(value);
-  }
-};
+using namespace std;
 
 int main()
 {

@@ -11,7 +11,10 @@ struct Point {
 
 // Массив из точек
 Point p[140];
+  // p[0].x
+  // p[0].y
 
+// Класс = данные + методы работы
 class Point2D {
 public:
   double x,y;
@@ -31,6 +34,8 @@ public:
 
 using namespace std;
 
+Point2D pointsStatic[1000];
+
 int main() {
     // Два отдельных массива
     x[0] = 1; y[0] = 2;
@@ -47,7 +52,29 @@ int main() {
     points[10].x = 10.1;
     points[10].y = 10.3;
     points[0].move(1,2);
+    points[1].rotate(1.2);
 
-    cout << "Hello world!" << endl;
+    Point2D A, B, C;
+    A.move(10, 2);
+
+  /*  x[10] = 1;
+    y[20] = 2;
+    move_point(10, 10, 2); */
+
+    // Динамическая память
+    Point2D *p;
+    //...
+    p = new Point2D;
+    p->x = 2;
+    p->move(10, 11);
+    (*p).move(1, 2);
+    delete p;
+
+    // Создаю массив объектов
+    Point2D *pp = new Point2D[10];
+
+    // Удаляю
+    delete[] pp;
+
     return 0;
 }

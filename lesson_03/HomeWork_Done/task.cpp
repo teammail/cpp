@@ -1,3 +1,5 @@
+// Домашнее задание:
+//   Реализовать стек и очередь
 #include <iostream>
 
 using namespace std;
@@ -15,31 +17,29 @@ struct Stack {
   Stack() : top(NULL) {}
   // Значение поместить на вершину стека
   void push(int value){
-     // TODO: реализовать
+
   }
   // Взять значение с вершины стека
   int pop(){
-     // TODO: реализовать
+
   }
 };
 
-// Доп. задание: очередь
 struct Queue {
-  E* head; // "Голова" - начало очереди
-  E* tail; // "Хвост" - конец очереди
+  E* start;
   // Конструктор
-  Queue() : head(NULL), tail(NULL) {};
+  Queue() : start(NULL) {};
   // В конец очереди
   void put(int value){
-     // TODO: реализовать
+
   }
   // Забрать первый элемент из очереди
   int get(){
-     // TODO: реализовать
+
   }
 };
 
-int main() {
+int main_example() {
   Stack s;
   s.push(2);
   s.push(3);

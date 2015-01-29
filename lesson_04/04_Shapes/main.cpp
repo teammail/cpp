@@ -41,6 +41,13 @@ public:
   Line(char *name, Point a, Point b) :
     Shape(name), a(a), b(b){
   }
+  void show(){
+    cout << "Line ";
+    Shape::show();
+    a.show();
+    cout << " - ";
+    b.show();
+  }
 };
 
 class Circle : protected Shape {
@@ -52,6 +59,12 @@ public:
   Circle(char *name, Point center, double radius) :
     Shape(name), center(center), radius(radius){
   }
+  void show(){
+    cout << "Circle ";
+    Shape::show();
+    center.show();
+    cout << "  radius = " << radius << endl;
+  }
 };
 
 // Везде метод show() -> показывает свойства фигуры
@@ -61,6 +74,7 @@ int main() {
   Line line1("AB", A, B);
   Circle c1("CircleA", A, 5.0),
     c2("CircleB", B, 7.2);
+
   A.show(); B.show();
   line1.show();
   c1.show();

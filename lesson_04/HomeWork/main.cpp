@@ -56,6 +56,9 @@ public:
     os << r.p << " / " << r.q << " ";
     return os;
   }
+
+  // stream - поток
+  // thread - поток/нить
 };
 
 int main()

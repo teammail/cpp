@@ -11,7 +11,11 @@ protected:
   Shape(char *name = NULL) : name(name) {
   }
   // Каждая фигура показывает своё имя
-  void show(){
+public:
+  virtual void show() = 0;
+
+protected:
+  void showName(){
     if(name != NULL){
       cout << name << " ";
     }
@@ -19,7 +23,7 @@ protected:
 };
 
 // Наследники Shape:
-class Point : protected Shape {
+class Point : public Shape {
   double x, y;
 public:
   // Конструктор
@@ -28,12 +32,12 @@ public:
   }
   void show(){
     cout << "Point ";
-    Shape::show();
+    Shape::showName();
     cout << "  x = " << x << " y = " << y << endl;
   }
 };
 
-class Line : protected Shape {
+class Line : public Shape {
   // Внутри 2 точки
   Point a, b;
 public:
@@ -43,14 +47,14 @@ public:
   }
   void show(){
     cout << "Line ";
-    Shape::show();
+    Shape::showName();
     a.show();
     cout << " - ";
     b.show();
   }
 };
 
-class Circle : protected Shape {
+class Circle : public Shape {
   // Одна точка и радиус
   Point center;
   double radius;
@@ -61,7 +65,7 @@ public:
   }
   void show(){
     cout << "Circle ";
-    Shape::show();
+    Shape::showName();
     center.show();
     cout << "  radius = " << radius << endl;
   }
@@ -70,15 +74,18 @@ public:
 // Везде метод show() -> показывает свойства фигуры
 
 int main() {
-  Point A("A", 1.2, 2.1), B("B", 5, 6);
-  Line line1("AB", A, B);
-  Circle c1("CircleA", A, 5.0),
-    c2("CircleB", B, 7.2);
+  Shape* shapes[5] = {
+    new Point("A", 1.2, 2.1),
+    new Point("B", 5, 6),
+    new Line("AB", Point("A", 1.2, 2.1),
+             Point("B", 5, 6)),
+    new Circle("CircleA", Point("A", 1.2, 2.1), 5.0),
+    new Circle("CircleB", Point("B", 5, 6), 7.2)
+  };
 
-  A.show(); B.show();
-  line1.show();
-  c1.show();
-  c2.show();
+  for(int i = 0; i < 5; ++i){
+    shapes[i]->show();
+  }
 
   return 0;
 }

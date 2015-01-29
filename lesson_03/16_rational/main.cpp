@@ -12,7 +12,7 @@ long GCD(long a, long b){
 
 // Рациональная дробь: p/q
 class Rational {
-  long p,q; // p - числитель, q - знаменатель
+  long p, q; // p - числитель, q - знаменатель
   // Сокращение дроби
   void normalize(){
     long d = GCD(p,q); // Вычисляем наибольший общий делитель
@@ -20,6 +20,7 @@ class Rational {
     q /= d; // делим на него знаменатель
   }
 public:
+  // TODO: Конструктор
   Rational(long pi, long qi) :
     p(pi), q(qi) {
     assert(q != 0);
@@ -35,6 +36,7 @@ public:
     cout << "q = ";
     cin >> q;
   }
+  // Показать дробь на экран (в консоль)
   void show(){
     // Сокращаем дробь если надо
     normalize();
@@ -49,6 +51,7 @@ public:
     }
   }
 
+  // Сложение дробей
   void add(Rational& right){
     //  p/q + right.p/right.q
     long pNew = p * right.q + right.p * q;

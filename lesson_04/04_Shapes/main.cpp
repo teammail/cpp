@@ -26,6 +26,11 @@ public:
   Point(char *name, double x, double y) :
       Shape(name), x(x), y(y) {
   }
+  void show(){
+    cout << "Point ";
+    Shape::show();
+    cout << "  x = " << x << " y = " << y << endl;
+  }
 };
 
 class Line : protected Shape {
@@ -56,10 +61,10 @@ int main() {
   Line line1("AB", A, B);
   Circle c1("CircleA", A, 5.0),
     c2("CircleB", B, 7.2);
-  /*A.show(); B.show();
+  A.show(); B.show();
   line1.show();
   c1.show();
-  c2.show(); */
+  c2.show();
 
   return 0;
 }

@@ -3,6 +3,9 @@
 
 using namespace std;
 
+// template <class T>
+// template <typename T>
+
 // Элемент стека и очереди
 template <typename T>
 struct E {

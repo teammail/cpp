@@ -28,11 +28,14 @@ int main()
   // map<key, value>
   map<string, string> dict;
 
+  // dict[3] = 4;
+  // dict[3] = 5;
+
   dict["Привет"] = "Hi";
   dict["Я"] = "I";
 
   dict["Ты"] = "You";
-  cout << dict["You"] << endl;
+  cout << dict["Ты"] << endl;
 
   dict["Ты2"] = "You2";
   cout << dict["Ты"] << endl;

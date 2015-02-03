@@ -2,7 +2,7 @@
 
 using namespace std;
 
-template <class T, int x>
+template <class T, int x = 5>
 T add(T t){
   return t + x;
 }
@@ -18,8 +18,8 @@ int main()
 
   for(int i = 0; i < 1000; ++i){
     int x = 1;
-//    x = add<int,i>(x);
+    // error: no matching function for call to 'add(int&)'|
+    x = add<int,i>(x);
   }
-    cout << "Hello world!" << endl;
-    return 0;
+  return 0;
 }

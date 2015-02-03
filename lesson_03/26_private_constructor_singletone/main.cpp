@@ -3,7 +3,12 @@
 
 using namespace std;
 
+// Создаем класс S
+// Задача: сделать чтобы в программе
+// был только один экземпляр этого класса
+// Singletone / Одиночка
 class S {
+//private: // по-умолчанию и так private
   static int count;
   int id;
   // private (частный) конструктор
@@ -25,12 +30,16 @@ public:
   void show(){
     cout << "S #" << id << endl;
   }
+  ~S(){
+    cout << "Destructor: #" << id << endl;
+  }
 };
 
 int S::count = 0;
 S* S::instance = NULL;
 
 int main() {
+  //S s1;
   //S *s = new S;
   S a = S::getInstance(), b = S::getInstance();
   a.show();

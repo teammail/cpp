@@ -5,22 +5,28 @@
 
 #define SHOW(x) { cout << #x << " = " << x << endl; }
 
+using namespace std;
+
 // Без использования шаблонов
 int min(int a, int b);
 
 int min(int a, int b){
-    return (a < b) ? a : b;
+  cout << "min int" << endl;
+  return (a < b) ? a : b;
 }
 
 double min(double a, double b);
 
 double min(double a, double b){
-    return (a < b) ? a : b;
+  cout << "min double" << endl;
+  return (a < b) ? a : b;
 }
 
+// T - параметр шаблона
 template <class T>
 T min(T a, T b){
-    return (a < b) ? a : b;
+  cout << "min generic" << endl;
+  return (a < b) ? a : b;
 }
 
 template <class T>
@@ -50,14 +56,25 @@ T add(T value){
   return value + A;
 }
 
-using namespace std;
+struct Point {
+  double x, y;
+  int operator < (Point& p){
+    return x < p.x;
+  }
+  friend ostream& operator <<(ostream& os, const Point& p){
+    os << "(" << p.x << "; " << p.y << ") ";
+    return os;
+  }
+};
 
 int main() {
   //assert(2*2 == 5);
-
   SHOW(min(2, 3));
   SHOW(min(2.1, 2.3));
   SHOW(::min(string("a"), string("test")));
+  SHOW(::min<char>('A', 'D'));
+  Point p1 = {1, 2}, p2 = {3, 4};
+  SHOW(::min(p1, p2));
 
   double x[] = {5.2, 10.10, 13.5, 11.1};
   SHOW(findMax(x, 4));

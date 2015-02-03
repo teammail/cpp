@@ -1,5 +1,6 @@
 #include <iostream>
-#include <assert.h>
+#include <cassert>
+#include <cmath>
 
 using namespace std;
 
@@ -19,6 +20,37 @@ class Rational {
     p /= d; // делим на него числитель
     q /= d; // делим на него знаменатель
   }
+  void show(ostream& os) const {
+    // Сокращаем дробь если надо
+    long d = GCD(p,q); // Вычисляем наибольший общий делитель
+    long px = p / d; // делим на него числитель
+    long qx = q / d; // делим на него знаменатель
+    if(qx < 0){
+      px = -px;
+      qx = -qx;
+    }
+
+    // Если знаменатель равен 1
+    // то это целое число
+    if(qx == 1){ // Условие (1)
+      os << px << endl;
+    } else {
+      // Целая часть
+      long whole = px / qx;
+      if(whole != 0)
+        os << whole << " ";
+      else
+        if(px < 0)
+          os << "-";
+      px -= whole * qx;
+      px = abs(px);
+      assert(px > 0);
+      // Если число целое, то должно было сработать
+      // первое условие (1)
+      assert(px % qx != 0);
+      os << px << "/" << qx << endl;
+    }
+  }
 public:
   // TODO: Конструктор
   Rational(long pi, long qi) :
@@ -35,63 +67,54 @@ public:
     cin >> p;
     cout << "q = ";
     cin >> q;
+    normalize();
   }
   // Показать дробь на экран (в консоль)
   void show(){
-    // Сокращаем дробь если надо
-    normalize();
-
-    if(q == 1){
-      cout << p << endl;
-    } else {
-      long whole = p/q;
-      if(whole != 0)
-        cout << whole << " ";
-      cout << (p % q) << "/" << q << endl;
-    }
+    show(cout);
   }
 
   // Сложение дробей
   void add(Rational& right){
-    //  p/q + right.p/right.q
-    long pNew = p * right.q + right.p * q;
-    //   ----   --------------------------
-    long qNew =       q * right.q;
-    p = pNew;
-    q = qNew;
+    //   p    right.p
+    //  --- + -------
+    //   q    right.q
+    p = p * right.q + right.p * q;
+    //  --------------------------
+    q =       q * right.q;
+
+    // Для предотвращения переполнений
+    normalize();
   }
 
   // a + b
-  Rational operator+(Rational& right){
+  const Rational operator+(Rational& right){
     Rational res = *this;
     res.add(right);
     return res;
   }
 
   Rational operator+(int right){
-    Rational res(0, 1);
-    res.p = p + right * q;
-    //----  --------------
-    res.q =        q;
+    Rational res = *this;
+    Rational r(right, 1);
+    res.add(r);
     return res;
   }
 
   friend
   Rational
     operator+(long left, Rational& right){
-    Rational res(0, 1);
-    res.p = right.p + left * right.q;
-    //----  -------------------------
-    res.q =        right.q;
+    Rational res(left, 1);
+    res.add(right);
     return res;
   }
 
   void sub(Rational& right){
-    long pNew = p * right.q - right.p * q;
-    //   ----   --------------------------
-    long qNew = q * right.q;
-    p = pNew;
-    q = qNew;
+    p = p * right.q - right.p * q;
+    //  --------------------------
+    q =       q * right.q;
+
+    normalize();
   }
 
   Rational operator-(Rational& right){
@@ -101,19 +124,44 @@ public:
   }
 
   // Конструктор копирования
-  Rational(const Rational &r){
-    cout << r.p << "/" << r.q << endl;
+ /* Rational(const Rational &r){
+    //cout << r.p << "/" << r.q << endl;
     p = r.p;
     q = r.q;
-    cout << "Copy contructor " << p << "/" << q << endl;
+    //cout << "Copy contructor " << p << "/" << q << endl;
+  } */
+
+  friend ostream& operator <<(ostream &os, const Rational &r){
+    r.show(os);
+    return os;
   }
 };
 
-int main()
-{
+#define SHOW(x) { cout << #x << " = " << (x) << endl; }
+
+int main() {
+ /* Rational x(3, 1);
+  x.show();
+
+  Rational y(6, 4);
+  y.show(); */
+
+  Rational aa(2, 6), bb(3, 6);
+  SHOW(aa);
+  SHOW(bb);
+  SHOW(aa - bb);
+
   Rational a(4,6), b(11, 2);
-  a.show();
-  b.show();
+  SHOW(a);
+  SHOW(b);
+  Rational c = a + b;
+  SHOW(c);
+  SHOW(a + b);
+  SHOW(a - b);
+ // SHOW(a / b);
+ // SHOW(a * b);
+  SHOW(a);
+  SHOW(b);
 
  // Rational c = b + a;
 
@@ -124,12 +172,12 @@ int main()
   b.show();
   c1.show();
 
- /* Rational x(4,6), y(1,3);
+  Rational x(4,6), y(1,3);
   x.add(y);
   x.show();
 
   Rational yy("Vvedite:");
-  yy.show(); */
+  yy.show();
 
   return 0;
 }

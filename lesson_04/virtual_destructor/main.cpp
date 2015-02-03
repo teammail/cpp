@@ -3,28 +3,38 @@
 using namespace std;
 
 class A {
+protected:
+    char name;
 public:
-    A(){
+    A() : name('A') {
         cout << "Constructor A" << endl;
     }
+    A(int aa) : name('A') {
+        cout << "Constructor2 A" << endl;
+    }
     virtual ~A(){
-        cout << "Destructor A" << endl;
+        cout << "Destructor A: " << name << endl;
     }
 };
 
 class B : public A {
+  int a,b;
 public:
-    B(){
+    B() : A(2), a(1), b(a+2) {
+      cout << " a = " << a << endl;
+      cout << " b = " << b << endl;
+      name = 'B';
         cout << "Constructor B" << endl;
     }
-    ~B(){
-        cout << "Destructor B" << endl;
+    ~B() {
+        cout << "Destructor B: " << name << endl;
     }
 };
 
 int main() {
-    A* a = new B;
+    A* a[2] = { new B, new A };
 
-    delete a;
+    for(int i = 0; i < 2; ++i)
+      delete a[i];
     return 0;
 }

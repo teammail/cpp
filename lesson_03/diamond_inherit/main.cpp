@@ -1,3 +1,4 @@
+// Diamond Inheritance
 #include <iostream>
 
 using namespace std;
@@ -17,14 +18,14 @@ struct A {
   };
 };
 
-struct B : public A {
+struct B : virtual public A {
   B() { A::name = 'B'; };
   void show(){
-    cout << "show_B 643 " << 2*10 << name << endl;
+    cout << "show_B " << name << endl;
   };
 };
 
-struct C : public A {
+struct C : virtual public A {
   C(){ A::name = 'C'; };
   void show(){
     cout << "show_C " << name << endl;
@@ -34,23 +35,32 @@ struct C : public A {
 struct D : public B, public C {
   D(){ B::name = 'D'; };
   void show(){
-    cout << "D " << B::name << endl;
-    //B::show();
-    //C::show();
-    //C::A::show();
+    cout << "show_D " << B::name << endl;
+    B::show();
+    C::show();
+    C::A::show();
+    B::A::show();
   };
 };
 
 int main()
 {
-//  D d;
-//  d.show();
-  //A* x[3] = {new A, new B, new C};
-  //for(int i = 0; i < 3; ++i)
-   // x[i]->show();
+  /*A a;
+  a.show();
+  B b;
+  b.show();
+  C c;
+  c.show(); */
 
+  D d;
+  d.show();
+
+  /*A* x[4] = {new A, new B, new C, new D};
+  for(int i = 0; i < 4; ++i)
+    x[i]->show();
+*/
   // Полиморфизм
-  A* x[3] = { new B, new A, new C };
+  A* x[4] = { new B, new A, new C, new D };
  /* A* x[4];
   x[0] = new C;
   x[1] = new B;

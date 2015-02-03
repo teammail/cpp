@@ -1,4 +1,6 @@
-// Перегрузка операторов
+//  Перегрузка операторов
+// -----------------------
+// В C++ возможна перегрузка:
 // арифметических операций
 //   + - * /
 // Перегрузка операций сравнения
@@ -10,7 +12,9 @@
 //#include <assert.h> // для С
 #include <cmath>
 
-//#define DEBUG
+#define SHOW(x) { cout << #x << " = " << (x) << endl; }
+
+//#define DEBUG1
 
 using namespace std;
 
@@ -60,7 +64,7 @@ template <class T>
 void Rational<T>::normalize(){
     // Находим НОД числителя и знаменателя
     T d = GCD(abs(p),abs(q));
-#ifdef DEBUG
+#ifdef DEBUG1
     cout << "p = " << p << " q = " << q <<
       "  GCD = " << d << endl;
 #endif // DEBUG
@@ -70,9 +74,7 @@ void Rational<T>::normalize(){
   }
 
 template <class T>
-Rational<T>::Rational(T pi, T qi){
-    p = pi;
-    q = qi;
+Rational<T>::Rational(T pi, T qi) : p(pi), q(qi) {
     assert(q != 0);
     //if(q == 0){
     //  cout << "q == 0" << endl;
@@ -121,7 +123,7 @@ ostream& operator <<(ostream& os, Rational<T> r){
     if(r.q == 1){
       os << r.p;
     } else {
-#ifdef DEBUG
+#ifdef DEBUG1
       os << "DEBUG: " << r.p << " " << r.q << endl;
 #endif // DEBUG
       T whole = r.p / r.q;
@@ -162,20 +164,25 @@ public:
     }
 };
 
+
 int main() {
- // MyClass<int, Rational > ll;
+  MyClass<int, Rational > ll;
 
   Rational<> a(4,6), b(11, 2);
-  cout << "a = " << a << endl;
-  cout << "b = " << b << endl;
+  SHOW(a);
+  SHOW(b);
   Rational<> c = a + b;
-  cout << "c = " << c << endl;
+  SHOW(c);
 
- /* ll.showND(a);
-  cout << a << " + " << b << " = " << (a + b) << endl;
+  ll.showND(a);
+  SHOW(a);
+  SHOW(b);
+  SHOW(a + b);
 
   Rational<long> x(-5,3), y(-3,3), z(5, 6);
-  cout << x << " - " << y << " = " << (x - y) << endl;
+  SHOW(x);
+  SHOW(y);
+  SHOW(x - y);
 
   Rational<long> t = x + y + z;
   cout << x << " + " << y << " + " << z << " = " << t << endl;
@@ -183,10 +190,10 @@ int main() {
   Rational<int> k(1,6), l(1,2);
   cout << k << " + " << l << " = " << (k+l) << endl;
 
-  cout << "Vvedite: ";
+  /*cout << "Vvedite: ";
   Rational<int> yy;
   cin >> yy;
-  cout << yy;*/
+  cout << yy; */
 
   return 0;
 }

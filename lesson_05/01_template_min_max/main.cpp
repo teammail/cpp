@@ -1,10 +1,18 @@
+// Базовое применение шаблонов
 #include <iostream>
 #include <cassert>
 #include <string>
 
+#define SHOW(x) { cout << #x << " = " << x << endl; }
+
+// Без использования шаблонов
+int min(int a, int b);
+
 int min(int a, int b){
     return (a < b) ? a : b;
 }
+
+double min(double a, double b);
 
 double min(double a, double b){
     return (a < b) ? a : b;
@@ -47,21 +55,21 @@ using namespace std;
 int main() {
   //assert(2*2 == 5);
 
-  cout << min(2, 3) << endl;
-  cout << min(2.1, 2.3) << endl;
-  cout << ::min(string("a"), string("test")) << endl;
+  SHOW(min(2, 3));
+  SHOW(min(2.1, 2.3));
+  SHOW(::min(string("a"), string("test")));
 
   double x[] = {5.2, 10.10, 13.5, 11.1};
-  cout << findMax(x, 4) << endl;
+  SHOW(findMax(x, 4));
 
   int c[] = {5, 6, 4, 2, 3};
-  cout << findMax(c, 5) << endl;
+  SHOW(findMax(c, 5));
 
   char d[] = {'x', 'f', 'B', 'K', 'L' };
-  cout << findMax(d, 5) << endl;
+  SHOW(findMax(d, 5));
 
   string s[] = {"hi", "test", "aa", "bb", "test2"};
-  cout << findMax(s, 5) << endl;
+  SHOW(findMax(s, 5));
 
   int h[3][3] = {
     { 1, 2,  3 },
@@ -69,5 +77,5 @@ int main() {
     { 3, 8,  6 },
   };
 
-  cout << findMax((int*)h, 9) << endl;
+  SHOW(findMax((int*)h, 9));
 }

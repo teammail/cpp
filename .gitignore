@@ -27,4 +27,4 @@ bin
 obj
 *.depend
 *.layout
-/lesson_9/QRegExp/*.autosave
+*.autosave

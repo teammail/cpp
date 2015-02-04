@@ -4,24 +4,35 @@
 
 using namespace std;
 
-int main()
-{
-  //ifstream dictFile("dict.txt");
+map <string, string> dict;
 
-  map <string, string> dict;
-  /*while(!dictFile.eof()){
+// Чтение словаря из файла
+void readDictionary() {
+  string dictFileName("dict.txt");
+  ifstream dictFile(dictFileName);
+  if (!dictFile.good()) {
+    cout << "File \"" << dictFileName << "\" - not exists!" << endl;
+  }
+  while(!dictFile.eof()){
     string from, to;
     dictFile >> from >> to;
-  }*/
+    dict[from] = to;
+  }
+  dictFile.close();
+}
+
+int main() {
+  readDictionary();
 
   ifstream in("in.txt");
   ofstream out("out.txt");
 
   int wordCount = 0;
-  while(!in.eof()){
+  while(!in.eof()) {
     string s;
     in >> s;
     cout << (++wordCount) << ". " << s << endl;
+    out << dict[s] << " ";
   }
 
   in.close();

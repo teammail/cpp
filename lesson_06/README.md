@@ -4,6 +4,7 @@
 Ссылки для скачивания
 ---------------------
 * Qt Creator: http://qt-project.org/downloads
+* http://www.qt.io/download-open-source/ 
 
 QT - история
 ------------

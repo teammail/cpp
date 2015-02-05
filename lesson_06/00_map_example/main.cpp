@@ -20,8 +20,8 @@ int main() {
 
   string src = "Everyone is permitted to copy and distribute";
 
-  int wordBegin = 0;
-  for(int i = 0; i <= src.size(); ++i){
+  unsigned int wordBegin = 0;
+  for(unsigned int i = 0; i <= src.size(); ++i){
     // Конец слова
     if((i == src.size() || src[i] == ' ')){
       if(i == wordBegin){

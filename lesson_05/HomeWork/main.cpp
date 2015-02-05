@@ -4,6 +4,7 @@
 
 using namespace std;
 
+// Словарь
 map <string, string> dict;
 
 // Чтение словаря из файла
@@ -12,8 +13,11 @@ void readDictionary() {
   ifstream dictFile(dictFileName);
   if (!dictFile.good()) {
     cout << "File \"" << dictFileName << "\" - not exists!" << endl;
+    return;
   }
-  while(!dictFile.eof()){
+  while(!dictFile.eof()) {
+    // from - слово на исходном языке
+    // to - перевод
     string from, to;
     dictFile >> from >> to;
     dict[from] = to;
@@ -32,7 +36,12 @@ int main() {
     string s;
     in >> s;
     cout << (++wordCount) << ". " << s << endl;
-    out << dict[s] << " ";
+    //out << dict.find(s) << " " << dict.end() << endl;
+    if(dict.find(s) == dict.end()){
+      out << s << "* ";
+    } else {
+      out << dict[s] << " ";
+    }
   }
 
   in.close();

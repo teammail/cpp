@@ -1,2 +1,5 @@
-﻿Ты You
-Мы We
+﻿You Ты
+We Мы
+This Этот
+is есть
+test тест

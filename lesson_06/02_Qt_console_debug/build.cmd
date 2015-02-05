@@ -1,2 +1,4 @@
-"C:\Qt\5.1.1\mingw48_32\bin\qmake" qt_debug.pro
-"C:\Qt\Tools\mingw48_32\bin\mingw32-make.exe" 
+SET PATH=C:\Qt\5.4\mingw491_32\bin;C:\Qt\5.1.1\mingw48_32\bin;C:\Qt\Tools\mingw48_32\bin;%PATH%
+qmake qt_debug.pro
+mingw32-make.exe
+mingw32-make.exe -f Makefile.Debug

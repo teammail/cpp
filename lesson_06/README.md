@@ -6,6 +6,8 @@
 * Qt Creator: http://qt-project.org/downloads
 * http://www.qt.io/download-open-source/ 
 
+При установке снимите галочку с **msvc 2013 ..** и поставьте на **MinGW 4.9.1**.
+
 QT - история
 ------------
 

@@ -19,12 +19,14 @@ public:
   ~MainWindow();
 
 private slots:
-  // Методы - обработчики сигналов
+  // Слоты - методы-обработчики сигналов
   void on_pushButton_clicked();
 
   void on_closeButton_clicked();
 
   void on_concatButton_clicked();
+
+  void on_enableButton_clicked();
 
 private:
   Ui::MainWindow *ui;

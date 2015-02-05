@@ -17,14 +17,14 @@ int main(int argc, char *argv[])
   // Связь сигнал -> слот
   QApplication a(argc, argv);
 
-  // Создаю основное окно
+  // Создаём основное окно
   MainWindow w;
-  // Показываю основное окно
+  // Показываем основное окно
   w.show();
 
   cout << "Starting..." << endl;
 
-  // Запускаю обработку событий
+  // Запуск основного цикла обработки событий
   int res = a.exec();
 
   cout << "Closing... res = " << res << endl;

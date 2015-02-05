@@ -18,7 +18,7 @@
     <property name="geometry">
      <rect>
       <x>80</x>
-      <y>130</y>
+      <y>150</y>
       <width>181</width>
       <height>41</height>
      </rect>
@@ -60,6 +60,9 @@
       <height>20</height>
      </rect>
     </property>
+    <property name="text">
+     <string>Начальный текст</string>
+    </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_2">
     <property name="geometry">
@@ -72,6 +75,9 @@
     </property>
    </widget>
    <widget class="QPushButton" name="concatButton">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>150</x>
@@ -87,8 +93,8 @@
    <widget class="QLineEdit" name="resEdit">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>80</y>
+      <x>110</x>
+      <y>110</y>
       <width>211</width>
       <height>20</height>
      </rect>
@@ -118,6 +124,19 @@
     </property>
     <property name="text">
      <string>Закрыть форму</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="enableButton">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>80</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Запретить</string>
     </property>
    </widget>
   </widget>
@@ -167,8 +186,8 @@
    <slot>on_concatButton_clicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>74</x>
-     <y>245</y>
+     <x>270</x>
+     <y>105</y>
     </hint>
     <hint type="destinationlabel">
      <x>81</x>

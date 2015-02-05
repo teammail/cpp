@@ -20,7 +20,9 @@ void readDictionary() {
     // to - перевод
     string from, to;
     dictFile >> from >> to;
-    dict[from] = to;
+    // from - ключ, to - значение
+    //dict[from] = to;
+    dict.insert(make_pair(from, to));
   }
   dictFile.close();
 }

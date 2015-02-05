@@ -1,8 +1,8 @@
-#include "game.h"
 #include <QTextStream>
 #include <QDebug>
 #include <QMessageBox>
-#include <assert.h>
+#include <cassert>
+#include "game.h"
 
 Game::Game()
 {

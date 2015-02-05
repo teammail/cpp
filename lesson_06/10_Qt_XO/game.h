@@ -15,16 +15,13 @@ enum State {
 };
 
 // Размер поля игры
-<<<<<<< HEAD:lesson_06/10_Qt_XO/game.h
 extern int MapSize;
-=======
-const int MapSize = 3;
+//const int MapSize = 3;
 
 /*enum E {
     a = 1,
     b = 20
 };*/
->>>>>>> f852223415dfa117029287e57fb8dc0fef14ad83:lesson_06/10_Qt_XO/game.h
 
 // Все что происодит на поле и логика игрового мира
 // Ходы, выйгрыш/проигрыш

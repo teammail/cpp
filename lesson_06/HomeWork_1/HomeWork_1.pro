@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2014-07-03T21:45:44
+# Project created by QtCreator 2015-02-05T22:40:13
 #
 #-------------------------------------------------
 
@@ -8,7 +8,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = QtCalc
+TARGET = HomeWork_1
 TEMPLATE = app
 
 
@@ -18,9 +18,3 @@ SOURCES += main.cpp\
 HEADERS  += mainwindow.h
 
 FORMS    += mainwindow.ui
-
-RESOURCES += \
-    design.qrc
-
-DISTFILES += \
-    README.md

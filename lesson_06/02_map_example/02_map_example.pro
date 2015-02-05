@@ -9,6 +9,7 @@ QT       += core
 QT       -= gui
 
 TARGET = 02_map_example
+# Консольное приложение
 CONFIG   += console
 CONFIG   -= app_bundle
 

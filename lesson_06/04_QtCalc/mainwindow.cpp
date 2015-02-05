@@ -35,8 +35,10 @@ void MainWindow::on_digit_clicked()
   // UTF-8
   QString s = ui->display->text();
 
-  QPushButton* button = (QPushButton *)QObject::sender();
-  if(button == NULL)
+  // (QPushButton *)QObject::sender() -
+  //  отправитель текущего сигнала
+  QPushButton* digitButton = (QPushButton *)QObject::sender();
+  if(digitButton == NULL)
     return;
 
   QChar zero('0');
@@ -45,7 +47,8 @@ void MainWindow::on_digit_clicked()
   if(s.at(0) == zero)
     s.remove(0, 1);
 
-  s += button->text();
+  // Дописываем цифру на экран
+  s += digitButton->text();
 
   ui->display->setText(s);
 }

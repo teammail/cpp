@@ -18,6 +18,9 @@ public:
 
   void clearDisplay();
 private slots:
+
+  // Когда нажимаем на цифровую кнопку
+  // вызывается этот слот
   void on_digit_clicked();
 
   void on_PointButton_clicked();

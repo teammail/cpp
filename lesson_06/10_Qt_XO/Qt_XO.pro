@@ -15,10 +15,13 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     game.cpp \
-    cellbutton.cpp
+    cellbutton.cpp \
+    gamesettings.cpp
 
 HEADERS  += mainwindow.h \
     game.h \
-    cellbutton.h
+    cellbutton.h \
+    gamesettings.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    gamesettings.ui

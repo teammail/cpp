@@ -20,6 +20,10 @@ private slots:
 
     void on_decFontSizeButton_clicked();
 
+    void on_incAllFontButton_clicked();
+
+    void on_incConcreteButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

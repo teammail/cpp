@@ -4,6 +4,8 @@
 #include <cassert>
 #include "game.h"
 
+int MapSize = 3;
+
 Game::Game()
 {
     // При старте программы сразу начинается новая игра
@@ -12,6 +14,10 @@ Game::Game()
 
 // Новая игра
 void Game::newGame(){
+  Map.resize(MapSize);
+  for(int i = 0; i < MapSize; ++i)
+    Map[i].resize(MapSize);
+
     // Первыми ходят всегда крестики
     state = O_MOVE;
     // Заполняем поле пустыми клетками, без крестиков и ноликов
@@ -62,7 +68,7 @@ QString Game::makeMove(int row, int col){
 }
 
 // Три крестика или три нолика
-void Game::line(char a[MapSize]){
+void Game::line(std::vector<char> a){
     // Если не все элементы равны => не подходит
     for(int i = 1; i < MapSize; ++i)
       if(a[i-1] != a[i])
@@ -81,7 +87,7 @@ void Game::line(char a[MapSize]){
 }
 
 void Game::checkGameOver(){
-    char a[MapSize];
+    std::vector<char> a(MapSize);
     // == Проверяем диагонали ==
     // Основная диагональ
     for(int i = 0; i < MapSize; ++i)

@@ -11,12 +11,12 @@ CellButton::CellButton(const char *text,
                        int row, int col,
                        Game &game) :
     QPushButton(text, parent),
-    row(row), col(col)
+    row(row), col(col), game(&game)
 {
-    this->game = &game;
+    //this->game = &game;
     // Если на кнопке написан крестик или нолик,
     // то нажимать на неё нельзя
-    if(text[0] == 'X' || text[0] == 'O')
+    if(text[0] == X || text[0] == O)
         setEnabled(false);
 }
 
@@ -24,8 +24,10 @@ CellButton::CellButton(const char *text,
 void CellButton::slotCellClicked(){
     // Выводим координаты нажатия для отладки
     qDebug() << "row = " << row << "   col = " << col;
-    // Делаем ход
+    // Делаем ход => получаем результат
+    // для данной клетки
     setText( game->makeMove(row, col) );
-    // Больше не можем нажимать на эту кнопку
+    // Больше не можем нажимать на эту клетку поля
+    // (эту кнопку)
     setEnabled(false);
 }

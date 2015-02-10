@@ -1,10 +1,14 @@
-# Перемещение поля по форме
+#-------------------------------------------------
+#
+# Project created by QtCreator 2015-02-06T10:48:15
+#
+#-------------------------------------------------
 
 QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = HomeWork_1
+TARGET = homework
 TEMPLATE = app
 
 

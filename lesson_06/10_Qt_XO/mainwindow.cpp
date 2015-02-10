@@ -4,6 +4,7 @@
 #include <QFileDialog> // Диалог выбора имени файла
 #include <QMessageBox> // Диалоговое окно с сообщением
 #include "gamesettings.h"
+#include "map_size.h"
 
 void MainWindow::resizeButtonsArray()
 {
@@ -87,8 +88,8 @@ void MainWindow::updateGameButtons(){
     int leftSpace = 50; // Отступ слева
     int randOffset = 5;
 
-    for(int i = 0; i < cells.size(); ++i)
-      for(int j = 0; j < cells[i].size(); ++j){
+    for(unsigned int i = 0; i < cells.size(); ++i)
+      for(unsigned int j = 0; j < cells[i].size(); ++j){
         qDebug() << "Delete: " << i << " " << j;
         if(cells[i][j] != NULL){
             delete cells[i][j];

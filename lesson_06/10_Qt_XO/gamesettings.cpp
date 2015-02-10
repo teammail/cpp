@@ -1,6 +1,7 @@
 #include "gamesettings.h"
 #include "ui_gamesettings.h"
 #include "game.h"
+#include "map_size.h"
 
 GameSettings::GameSettings(QWidget *parent) :
   QDialog(parent),

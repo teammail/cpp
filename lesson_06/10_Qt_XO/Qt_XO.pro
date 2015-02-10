@@ -21,7 +21,8 @@ SOURCES += main.cpp\
 HEADERS  += mainwindow.h \
     game.h \
     cellbutton.h \
-    gamesettings.h
+    gamesettings.h \
+    map_size.h
 
 FORMS    += mainwindow.ui \
     gamesettings.ui

@@ -79,11 +79,12 @@
     </property>
     <property name="font">
      <font>
-      <family>Verdana</family>
+      <family>Tahoma</family>
       <pointsize>24</pointsize>
       <weight>50</weight>
-      <italic>true</italic>
+      <italic>false</italic>
       <bold>false</bold>
+      <underline>true</underline>
      </font>
     </property>
     <property name="text">

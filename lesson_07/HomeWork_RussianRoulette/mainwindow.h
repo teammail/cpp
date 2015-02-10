@@ -18,6 +18,7 @@ public:
   explicit MainWindow(QWidget *parent = 0);
   ~MainWindow();
 
+  void log(QString s);
 private slots:
   void on_playButton_clicked();
 

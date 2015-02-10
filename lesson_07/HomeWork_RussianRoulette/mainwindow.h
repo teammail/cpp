@@ -11,9 +11,15 @@ class MainWindow : public QMainWindow
 {
   Q_OBJECT
 
+  // Номер раунда
+  int round;
+
 public:
   explicit MainWindow(QWidget *parent = 0);
   ~MainWindow();
+
+private slots:
+  void on_playButton_clicked();
 
 private:
   Ui::MainWindow *ui;

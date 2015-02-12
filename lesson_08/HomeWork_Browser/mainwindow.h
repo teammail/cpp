@@ -18,6 +18,10 @@ public:
 private slots:
   void on_goButton_clicked();
 
+  void on_toolButton_clicked();
+
+  void on_goToHistory_clicked();
+
 private:
   Ui::MainWindow *ui;
 };

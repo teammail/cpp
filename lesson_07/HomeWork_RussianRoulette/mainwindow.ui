@@ -137,6 +137,13 @@ p, li { white-space: pre-wrap; }
      </item>
      <item row="0" column="1">
       <widget class="QLabel" name="balanceLabel">
+       <property name="font">
+        <font>
+         <pointsize>17</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
        <property name="text">
         <string>100.0</string>
        </property>

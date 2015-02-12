@@ -13,8 +13,10 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    random.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    random.h
 
 FORMS    += mainwindow.ui

@@ -22,6 +22,8 @@ private slots:
 
   void on_goToHistory_clicked();
 
+  void on_webView_urlChanged(const QUrl &arg1);
+
 private:
   Ui::MainWindow *ui;
 };

@@ -8,18 +8,10 @@
 
 Как получить нажатую кнопку в обработчике (в слоте):
 ``` cpp
-// Кто отправил сигнал?
 QPushButton *button = (QPushButton *)QObject::sender();
 if(button == NULL){
   qDebug() << "Должны быть только объекты QPushButton";
   return;
 }
-
-// Получаем URL с кнопки
-QString url = button->text();
-// Выводим URL для отладки
-qDebug() << "URL:" << url;
-// Переходим по заданному адресу
-ui->webView->setUrl(url);
 ```
 

@@ -36,10 +36,21 @@ void MainWindow::on_toolButton_clicked() {
 
 void MainWindow::on_goToHistory_clicked() {
   // TODO: реализовать
+  // Кто отправил сигнал?
+  QPushButton *button = (QPushButton *)QObject::sender();
+  if(button == NULL){
+    qDebug() << "Должны быть только объекты QPushButton";
+    return;
+  }
+
+  QString url = button->text();
+  // Выводим URL для отладки
+  qDebug() << "URL:" << url;
+  ui->urlEdit->setText(url);
+  ui->webView->setUrl(url);
 }
 
 void MainWindow::on_webView_urlChanged(const QUrl &url)
 {
-  // Когда меняется URL в webView => меняем и URL в строке адреса
   ui->urlEdit->setText(url.toString());
 }

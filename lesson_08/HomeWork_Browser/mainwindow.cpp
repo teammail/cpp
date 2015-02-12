@@ -23,23 +23,16 @@ void MainWindow::on_goButton_clicked()
 
 // Добавление адреса сайта в закладки
 void MainWindow::on_toolButton_clicked() {
-  // Создаём новую кнопку
-  QPushButton *button = new QPushButton(this);
-  button->setText(ui->urlEdit->text());
-
-  // При нажатии на кнопку переходим на адрес
-  connect(button, SIGNAL(clicked()), this, SLOT(on_goToHistory_clicked()));
-
-  // Добавляем на панель
-  ui->historyTools->addWidget(button);
+  // TODO: реализовать
 }
 
+// Переход по кнопке из избранного
 void MainWindow::on_goToHistory_clicked() {
   // TODO: реализовать
 }
 
+// Когда меняется URL в webView => меняем и URL в строке адреса
 void MainWindow::on_webView_urlChanged(const QUrl &url)
 {
-  // Когда меняется URL в webView => меняем и URL в строке адреса
   ui->urlEdit->setText(url.toString());
 }

@@ -37,6 +37,35 @@ UPDATE contacts SET name = trim(name), surname=trim(surname), middlename=trim(mi
 SELECT * FROM contacts WHERE name='Иван' AND surname='Иванов'
 ```
 
+``` sql
+SELECT contacts.surname, contacts.name, contacts.middlename, 
+   phones.phone, 
+   phone_type.name AS type  
+  FROM phones JOIN contacts ON phones.id_contact = contacts.id 
+    JOIN phone_type ON phones.id_type = phone_type.id
+```
+
+LEFT JOIN
+``` sql 
+SELECT contacts.surname, contacts.name, contacts.middlename, phones.phone, phone_type.name AS type  FROM contacts LEFT JOIN phones ON phones.id_contact = contacts.id LEFT JOIN phone_type ON phones.id_type = phone_type.id
+```
+
+
+``` sql
+-- Ищем нужные данные
+SELECT * FROM contacts WHERE surname = 'Сидоров'
+-- Обновляем записи
+UPDATE contacts SET middlename='Петрович' WHERE surname = 'Сидоров'
+```
+
+``` sql
+INSERT INTO contacts(surname, name, middlename, sex) VALUES('Иванов', 'Сидор', 'Матвеевич', 'M')
+```
+
+``` sql 
+DELETE FROM contacts WHERE surname = 'Иванов'
+```
+
 
 Подключение к Базе Данных 
 -------------------------

@@ -28,7 +28,8 @@ void PrimeCalcThread::run(){
     // Если простое, то выводим в интерфейс
     if(isPrime){
       QString s = QString("%1").arg(n);
-      QListWidgetItem *item = new QListWidgetItem();
+      QListWidgetItem *item =
+          new QListWidgetItem();
       item->setText(s);
       resultsList->addItem(item);
       msleep(50);

@@ -17,6 +17,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_primeSearchButton_clicked()
 {
+  // Передаём все необходимые данные
+  // при старте
   PrimeCalcThread *thread =
       new PrimeCalcThread(this,
                           ui->primesList,

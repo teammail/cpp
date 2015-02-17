@@ -87,12 +87,9 @@ bool TableExists(QString tableName){
 void ShowContacts(){
   QSqlQuery q; // Запрос
   if (!q.exec("SELECT * FROM contacts")) {
-    qDebug() << "Cannot Select data "
-             << q.lastError().text();
+    qDebug() << "Cannot Select data";
     return;
   }
-  // Получаем запись
-  // Одна строка из результатов запроса
   QSqlRecord rec = q.record();
   cout << "Count: " << q.size() << endl;
 
@@ -102,13 +99,11 @@ void ShowContacts(){
     // Для Qt до версии 5
     // Индекс (начиная с нуля) столбца с заданным именем
     // в строке результатов
-    int fieldNo = rec.indexOf("name");
+    int fieldNo = q.record().indexOf("name");
     //QVariant nameQVariant = q.value("name");
     //QString name = nameQVariant.toString();
-    QString name =  q.value(fieldNo).toString();
-
-    // Начиная с Qt5
-    QString birthday = rec.value("birthday").toString();
+    QString name = q.value(fieldNo).toString();
+    QString birthday = q.value("birthday").toString();
 
     //        cout << ++count << ". " << name.toLocal8Bit().constData() << " " <<
     //                birthday.toStdString() << " " << endl;
@@ -206,7 +201,6 @@ int SQLiteTest(){
             phone.toStdString() << " " << endl;
   }
 
-  dbase.close();
 
   return 0;
 }

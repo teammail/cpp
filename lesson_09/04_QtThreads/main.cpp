@@ -38,6 +38,8 @@ int main(int argc, char *argv[])
     // Можем вывести, запущен ли поток
     t1.isRunning();
 
+    t1.wait();
+
     it.start();
 
     return a.exec();

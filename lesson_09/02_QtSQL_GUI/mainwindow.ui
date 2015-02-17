@@ -19,17 +19,17 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>281</width>
-      <height>131</height>
+      <width>331</width>
+      <height>141</height>
      </rect>
     </property>
    </widget>
    <widget class="QTableView" name="tableView_2">
     <property name="geometry">
      <rect>
-      <x>140</x>
+      <x>40</x>
       <y>160</y>
-      <width>351</width>
+      <width>451</width>
       <height>121</height>
      </rect>
     </property>
@@ -37,14 +37,24 @@
    <widget class="QPushButton" name="submitChangesButton">
     <property name="geometry">
      <rect>
-      <x>304</x>
-      <y>100</y>
+      <x>350</x>
+      <y>40</y>
       <width>121</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
      <string>Отправить изменения</string>
+    </property>
+   </widget>
+   <widget class="QListView" name="listView">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>190</y>
+      <width>256</width>
+      <height>111</height>
+     </rect>
     </property>
    </widget>
   </widget>

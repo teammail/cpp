@@ -20,12 +20,13 @@ MainWindow::MainWindow(QWidget *parent) :
 
     model = new QSqlTableModel(this);
     model->setTable("person");
-    model->setEditStrategy(QSqlTableModel::OnManualSubmit);
+    model->setEditStrategy(QSqlTableModel::OnFieldChange);
+
     model->select();
 
     model->setHeaderData(0, Qt::Horizontal, tr("ID"));
-    model->setHeaderData(1, Qt::Horizontal, tr("First name"));
-    model->setHeaderData(2, Qt::Horizontal, tr("Last name"));
+    model->setHeaderData(1, Qt::Horizontal, tr("Имя"));
+    model->setHeaderData(2, Qt::Horizontal, tr("Фамилия"));
 
     // Задаём на нашего компонента view
     ui->tableView->setModel(model);
@@ -33,6 +34,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->tableView_2->setModel(model);
     ui->tableView_2->resizeColumnsToContents();
+
+    ui->listView->setModel(model);
 }
 
 MainWindow::~MainWindow()

@@ -45,11 +45,12 @@ SELECT contacts.surname, contacts.name, contacts.middlename,
     JOIN phone_type ON phones.id_type = phone_type.id
 ```
 
-LEFT JOIN
-``` sql 
-SELECT contacts.surname, contacts.name, contacts.middlename, phones.phone, phone_type.name AS type  FROM contacts LEFT JOIN phones ON phones.id_contact = contacts.id LEFT JOIN phone_type ON phones.id_type = phone_type.id
-```
+LEFT JOIN - строки из таблицы слева всегда присутствуют.
 
+``` sql 
+SELECT contacts.surname, contacts.name, contacts.middlename, phones.phone, phone_type.name AS type  
+FROM contacts LEFT JOIN phones ON phones.id_contact = contacts.id LEFT JOIN phone_type ON phones.id_type = phone_type.id
+``
 
 ``` sql
 -- Ищем нужные данные

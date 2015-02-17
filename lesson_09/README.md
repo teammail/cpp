@@ -3,6 +3,10 @@
 
 https://lisiynos.googlecode.com/git/dp/cpp_6_sql.html
 
+Firefox Plugin:
+https://addons.mozilla.org/ru/firefox/addon/sqlite-manager/
+
+
 Язык SQL: SELECT, INSERT, UPDATE, DELETE 
 ----------------------------------------
 

@@ -26,6 +26,9 @@
       </item>
       <item>
        <widget class="QToolButton" name="toolButton">
+        <property name="toolTip">
+         <string>Добавить закладку</string>
+        </property>
         <property name="text">
          <string>...</string>
         </property>
@@ -37,6 +40,9 @@
       </item>
       <item>
        <widget class="QPushButton" name="goButton">
+        <property name="whatsThis">
+         <string/>
+        </property>
         <property name="text">
          <string>Go</string>
         </property>
@@ -45,22 +51,7 @@
      </layout>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="historyTools">
-      <item>
-       <widget class="QPushButton" name="pushButton">
-        <property name="text">
-         <string>ya.ru</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButton_2">
-        <property name="text">
-         <string>google.com</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
+     <layout class="QHBoxLayout" name="historyToolbar"/>
     </item>
     <item>
      <widget class="QWebView" name="webView">

@@ -2,6 +2,7 @@
 #include <QMessageBox> // Вывод окон с сообщениями пользователю
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "historybutton.h"
 
 MainWindow::MainWindow(QWidget *parent) :
   QMainWindow(parent),
@@ -24,26 +25,25 @@ void MainWindow::on_goButton_clicked()
 // Добавление адреса сайта в закладки
 void MainWindow::on_toolButton_clicked() {
   // Создаём новую кнопку
-  QPushButton *button = new QPushButton(this);
-  button->setText(ui->urlEdit->text());
-
-  // При нажатии на кнопку переходим на адрес
-  connect(button, SIGNAL(clicked()), this, SLOT(on_goToHistory_clicked()));
+  HistoryButton *button =
+      new HistoryButton(
+        this,
+        ui->urlEdit->text()
+      );
 
   // Добавляем на панель
-  ui->historyTools->addWidget(button);
+  ui->historyToolbar->addWidget(button);
 }
 
 void MainWindow::on_goToHistory_clicked() {
-  // TODO: реализовать
   // Кто отправил сигнал?
-  QPushButton *button = (QPushButton *)QObject::sender();
+  HistoryButton *button = (HistoryButton *)QObject::sender();
   if(button == NULL){
     qDebug() << "Должны быть только объекты QPushButton";
     return;
   }
 
-  QString url = button->text();
+  QString url = button->url();
   // Выводим URL для отладки
   qDebug() << "URL:" << url;
   ui->urlEdit->setText(url);

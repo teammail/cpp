@@ -13,6 +13,23 @@ https://lisiynos.googlecode.com/git/dp/cpp_6_sql.html
 Подключение к Базе Данных 
 -------------------------
 
+Класс **QSqlDatabase** представляет подключение к базе данных.
+
+Соединение предоставляет доступ к базе данных через один из поддерживаемых драйверов баз данных, которые унаследованы от QSqlDriver.
+
+Как написать собственный драйвер БД:
+http://doc.crossplatform.ru/qt/4.5.0/sql-driver.html#how-to-write-your-own-database-driver
+
+Как создать и открыть соединение по умолчанию к базе данных PostgreSQL:
+``` cpp
+QSqlDatabase db = QSqlDatabase::addDatabase("QPSQL");
+db.setHostName("acidalia");
+db.setDatabaseName("customdb");
+db.setUserName("mojito");
+db.setPassword("J0a1m8");
+bool ok = db.open();
+```
+
 Названия драйверов для Qt: http://qt-project.org/doc/qt-5/sql-driver.html
 ``` cpp
   // Подключаем драйвер для работы с SQLite

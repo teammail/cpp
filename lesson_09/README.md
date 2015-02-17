@@ -21,6 +21,21 @@ SELECT поле1,поле2 FROM имяТаблицы
 SELECT * FROM имяТаблицы WHERE поле1 = 'Значение' -- Только записи где поле1 равно значению 
 ```
 
+Выбираем Фамилию, Имя, Отчество через пробел как одну строчку:
+
+``` sql
+SELECT surname || ' ' || name || ' ' || middlename FROM contacts
+```
+
+Убираем пробелы в начале и конце строк:
+
+``` sql
+UPDATE contacts SET name = trim(name), surname=trim(surname), middlename=trim(middlename)
+```
+
+``` sql
+SELECT * FROM contacts WHERE name='Иван' AND surname='Иванов'
+```
 
 
 Подключение к Базе Данных 
